@@ -42,7 +42,7 @@ public class PlayingStandTest extends TestCase {
 
     public void testFourConnected() throws GameOverException {
         PlayingStand stand = new PlayingStand();
-        assertFalse(stand.areFourConnected());
+        assertTrue(stand.areFourConnected());
 
         stand.dropRed(0);
         stand.dropBlack(6);
@@ -196,7 +196,7 @@ public class PlayingStandTest extends TestCase {
 
         fillWholeStandWithoutWinner(stand);
 
-        assertTrue(stand.areFourConnected());  // Otra rotura  rehecha (assertFalse) 
+        assertFalse(stand.areFourConnected());  // Otra rotura  rehecha (assertFalse) 
         assertTrue(stand.isGameOver());
         assertNull(stand.getWinner());
 
