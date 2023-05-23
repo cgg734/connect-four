@@ -42,7 +42,7 @@ public class PlayingStandTest extends TestCase {
 
     public void testFourConnected() throws GameOverException {
         PlayingStand stand = new PlayingStand();
-        assertTrue(stand.areFourConnected());
+        assertFalse(stand.areFourConnected());
 
         stand.dropRed(0);
         stand.dropBlack(6);
@@ -50,7 +50,7 @@ public class PlayingStandTest extends TestCase {
 
         stand.dropRed(0);
         stand.dropBlack(6);
-        assertTrue(stand.areFourConnected());  // Otra vez roto
+        assertFalse(stand.areFourConnected());  // Otra vez roto
 
         stand.dropRed(0);
         stand.dropBlack(6);
@@ -65,7 +65,7 @@ public class PlayingStandTest extends TestCase {
         } catch (GameOverException expected) {
         }
     }
-
+    
     public void testFourConnectedHorizontally() throws GameOverException {
         PlayingStand stand = new PlayingStand();
         createRedWinsHorizontally(stand);
